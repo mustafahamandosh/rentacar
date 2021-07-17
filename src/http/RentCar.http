@@ -1,0 +1,9 @@
+POST {{baseURL}}/categories
+Content-Type: application/json
+
+{
+    "name": "BMW",
+    "description": "The fastest car"
+}
+
+### add a new category
