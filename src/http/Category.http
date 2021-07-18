@@ -1,3 +1,7 @@
+GET {{baseURL}}/categories
+Accept: application/json
+
+###
 POST {{baseURL}}/categories
 Content-Type: application/json
 

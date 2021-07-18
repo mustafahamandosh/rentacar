@@ -11,3 +11,8 @@ categoriesRoutes.post('/', (req, res) => {
     categoryRepository.create({ name, title, description });
     return res.status(201).send();
 });
+
+categoriesRoutes.get('/', (req, res) => {
+    const categories = categoryRepository.list();
+    return res.json({ categories });
+});
