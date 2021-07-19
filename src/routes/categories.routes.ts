@@ -15,6 +15,5 @@ categoriesRoutes.post('/', (req, res) => {
 });
 
 categoriesRoutes.get('/', (req, res) => {
-    const categories = categoryRepository.list();
-    return res.json({ categories });
+    return res.json({ categories: categoryRepository.list() });
 });
