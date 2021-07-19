@@ -2,7 +2,6 @@ import { Category } from '../model/Category';
 
 interface ICategoryDTO {
     name: string;
-    title: string;
     description: string;
 }
 
@@ -13,12 +12,11 @@ export class CategoryRepository {
         this.categories = [];
     }
 
-    create({ name, title, description }: ICategoryDTO): void {
+    create({ name, description }: ICategoryDTO): void {
         const category = new Category();
 
         Object.assign(category, {
             name,
-            title,
             description,
             created_at: new Date(),
         });
