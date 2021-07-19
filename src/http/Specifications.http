@@ -1,0 +1,13 @@
+GET {{baseURL}}/specifications
+Accept: application/json
+
+###
+POST {{baseURL}}/specifications
+Content-Type: application/json
+
+{
+    "name": "Test",
+    "description": "test test test"
+}
+
+###
