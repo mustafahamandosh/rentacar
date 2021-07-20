@@ -23,6 +23,7 @@ export class ImportCategoryUseCase {
                     categories.push({ name, description });
                 })
                 .on('end', () => {
+                    fs.promises.unlink(file.path).then(r => r);
                     return resolve(categories);
                 })
                 .on('error', () => {
@@ -33,6 +34,12 @@ export class ImportCategoryUseCase {
 
     async execute(file: Express.Multer.File): Promise<void> {
         const categories = await this.loadCategories(file);
-        console.log(categories);
+        categories.map(async ({ name, description }) => {
+            const isCategoryExist = this.categoryRepository.findByName(name);
+            if (isCategoryExist) {
+                throw new Error('Category already exists!');
+            }
+            this.categoryRepository.create({ name, description });
+        });
     }
 }
