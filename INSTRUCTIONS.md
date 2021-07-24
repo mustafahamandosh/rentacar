@@ -49,3 +49,7 @@
 **stop container**
 
     docker stop id
+
+**list ip of containers**
+
+    docker exec rentacar cat /etc/hosts
