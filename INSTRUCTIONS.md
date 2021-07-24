@@ -53,3 +53,11 @@
 **list ip of containers**
 
     docker exec rentacar cat /etc/hosts
+
+**To create a migration**
+
+    yarn typeorm migration:create -n MigrationName
+
+**To execute a migration**
+
+    yarn typeorm migration:run
