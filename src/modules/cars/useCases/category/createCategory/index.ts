@@ -1,8 +1,8 @@
-import { CategoryRepository } from '../../../repositories/implementations/CategoryRepository';
+import { PostgresCategoryRepository } from '../../../repositories/implementations/PostgresCategoryRepository';
 import { CreateCategoryController } from './CreateCategoryController';
 import { CreateCategoryUseCase } from './CreateCategoryUseCase';
 
-const categoryRepository = CategoryRepository.getInstance();
+const categoryRepository = new PostgresCategoryRepository();
 const createCategoryUseCase = new CreateCategoryUseCase(categoryRepository);
 export const createCategoryController = new CreateCategoryController(
     createCategoryUseCase,

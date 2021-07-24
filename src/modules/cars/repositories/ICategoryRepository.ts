@@ -6,9 +6,9 @@ export interface ICategoryDTO {
 }
 
 export interface ICategoryRepository {
-    create({ name, description }: ICategoryDTO): void;
+    create({ name, description }: ICategoryDTO): Promise<void>;
 
-    list(): Category[];
+    list(): Promise<Category[]>;
 
-    findByName(name: string): Category | undefined;
+    findByName(name: string): Promise<Category | undefined>;
 }

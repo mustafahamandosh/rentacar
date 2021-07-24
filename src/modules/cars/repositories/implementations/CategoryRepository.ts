@@ -17,7 +17,7 @@ export class CategoryRepository implements ICategoryRepository {
         return this.INSTANCE;
     }
 
-    create({ name, description }: ICategoryDTO): void {
+    async create({ name, description }: ICategoryDTO): Promise<void> {
         const category = new Category();
 
         Object.assign(category, {
@@ -29,11 +29,11 @@ export class CategoryRepository implements ICategoryRepository {
         this.categories.push(category);
     }
 
-    list(): Category[] {
+    async list(): Promise<Category[]> {
         return this.categories;
     }
 
-    findByName(categoryName: string): Category | undefined {
+    async findByName(categoryName: string): Promise<Category | undefined> {
         return this.categories.find(({ name }) => name === categoryName);
     }
 }
