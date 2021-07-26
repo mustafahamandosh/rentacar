@@ -76,6 +76,73 @@
           }
         }
       }
+    },
+    "/categories/import": {
+      "post": {
+        "tags": [
+          "Category"
+        ],
+        "summary": "Upload a new category csv file",
+        "operationId": "This is a POST request to upload categories",
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "file": {
+                    "type": "string",
+                    "format": "binary"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Created"
+          }
+        }
+      }
+    },
+    "/specifications": {
+      "post": {
+        "tags": [
+          "Specifications"
+        ],
+        "summary": "Create a new specification",
+        "operationId": "This is a POST request to create a new specification",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string"
+                  },
+                  "description": {
+                    "type": "string"
+                  }
+                },
+                "example": {
+                  "name": "Specification name sample",
+                  "description": "Specification description sample"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Created"
+          },
+          "500": {
+            "description": "Specification name already exist!"
+          }
+        }
+      }
     }
   }
 }
