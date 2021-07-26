@@ -1,6 +1,6 @@
+import { Specifications } from 'models/Specifications';
 import { getRepository, Repository } from 'typeorm';
 
-import { Specifications } from '../../model/Specifications';
 import {
     ISpecificationsDTO,
     ISpecificationsRepository,

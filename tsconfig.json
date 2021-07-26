@@ -13,5 +13,14 @@
     "forceConsistentCasingInFileNames": true,
     "moduleResolution": "node",
     "resolveJsonModule": true,
+    "baseUrl": ".",
+    "paths": {
+      "models/*": [
+        "./src/modules/cars/model/*"
+      ],
+      "controllers/*": [
+        "./src/modules/cars/useCases/*"
+      ]
+    }
   }
 }

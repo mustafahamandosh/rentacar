@@ -1,4 +1,4 @@
-import { Specifications } from '../model/Specifications';
+import { Specifications } from 'models/Specifications';
 
 export interface ISpecificationsDTO {
     name: string;
