@@ -5,11 +5,14 @@
   "username": "docker",
   "password": "docker",
   "database": "rentcar",
-  "migrations": ["./src/database/migrations/*.ts"],
+  "migrations": [
+    "./src/database/migrations/*.ts"
+  ],
   "cli": {
     "migrationsDir": "./src/database/migrations"
   },
   "entities": [
-    "./src/modules/cars/model/*.ts"
+    "./src/modules/cars/model/*.ts",
+    "./src/modules/accounts/model/*.ts"
   ]
 }
