@@ -1,3 +1,4 @@
+import bcrypt from 'bcryptjs';
 import { inject, injectable } from 'tsyringe';
 
 import { ICreateUserDTO } from '../../../dtos/ICreateUserDTO';
@@ -15,10 +16,11 @@ export class CreateUserUseCase {
         password,
         driver_license,
     }: ICreateUserDTO): Promise<void> {
+        const passwordHash = bcrypt.hashSync(password, 8);
         await this.userRepository.create({
             name,
             email,
-            password,
+            password: passwordHash,
             driver_license,
         });
     }
