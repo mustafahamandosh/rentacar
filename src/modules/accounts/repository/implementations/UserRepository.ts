@@ -25,4 +25,8 @@ export class UserRepository implements IUserRepository {
         });
         await this.repository.save(user);
     }
+
+    async findByEmail(email: string): Promise<User | undefined> {
+        return await this.repository.findOne({ email });
+    }
 }

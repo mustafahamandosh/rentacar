@@ -16,6 +16,10 @@ export class CreateUserUseCase {
         password,
         driver_license,
     }: ICreateUserDTO): Promise<void> {
+        const isUserEmailExist = await this.userRepository.findByEmail(email);
+        if (isUserEmailExist) {
+            throw new Error('This email is already in use');
+        }
         const passwordHash = bcrypt.hashSync(password, 8);
         await this.userRepository.create({
             name,
