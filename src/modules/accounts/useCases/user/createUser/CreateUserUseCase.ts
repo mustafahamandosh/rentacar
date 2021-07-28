@@ -1,4 +1,4 @@
-import bcrypt from 'bcryptjs';
+import { hashSync } from 'bcryptjs';
 import { inject, injectable } from 'tsyringe';
 
 import { ICreateUserDTO } from '../../../dtos/ICreateUserDTO';
@@ -20,7 +20,7 @@ export class CreateUserUseCase {
         if (isUserEmailExist) {
             throw new Error('This email is already in use');
         }
-        const hashPassword = bcrypt.hashSync(password, 8);
+        const hashPassword = hashSync(password, 8);
         await this.userRepository.create({
             name,
             email,

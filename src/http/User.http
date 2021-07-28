@@ -1,3 +1,12 @@
+POST {{baseURL}}/session
+Content-Type: application/json
+
+{
+    "email": "hamandoshm@hotmail.com",
+    "password": "12345678"
+}
+
+###
 POST {{baseURL}}/users
 Content-Type: application/json
 
