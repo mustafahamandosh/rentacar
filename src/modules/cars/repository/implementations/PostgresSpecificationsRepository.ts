@@ -1,10 +1,10 @@
-import { Specifications } from 'models/Specifications';
 import { getRepository, Repository } from 'typeorm';
 
+import { Specifications } from 'models/Specifications';
 import {
     ISpecificationsDTO,
     ISpecificationsRepository,
-} from '../ISpecificationsRepository';
+} from 'repository-interface/ISpecificationsRepository';
 
 export class PostgresSpecificationsRepository
     implements ISpecificationsRepository

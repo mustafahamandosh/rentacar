@@ -52,22 +52,23 @@
         "ts": "never"
       }
     ],
-    "import-helpers/order-imports": [
-      "warn",
+    "import/order": [
+      "error",
       {
-        "newlinesBetween": "always",
         "groups": [
-          "module",
-          "/^@shared/",
-          [
-            "parent",
-            "sibling",
-            "index"
-          ]
+          "builtin",
+          "external",
+          "index",
+          "sibling",
+          "parent",
+          "internal",
+          "object",
+          "type"
         ],
+        "newlines-between": "always",
         "alphabetize": {
           "order": "asc",
-          "ignoreCase": true
+          "caseInsensitive": true
         }
       }
     ],

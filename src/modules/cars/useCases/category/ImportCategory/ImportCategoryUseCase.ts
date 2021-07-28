@@ -1,8 +1,9 @@
-import csvParse from 'csv-parse';
 import fs from 'fs';
+
+import csvParse from 'csv-parse';
 import { inject, injectable } from 'tsyringe';
 
-import { ICategoryRepository } from '../../../repositories/ICategoryRepository';
+import { ICategoryRepository } from 'repository-interface/ICategoryRepository';
 
 interface ICategoryFile {
     name: string;
@@ -23,12 +24,12 @@ export class ImportCategoryUseCase {
             const parseFile = csvParse();
             stream.pipe(parseFile);
             parseFile
-                .on('data', async line => {
+                .on('data', async (line) => {
                     const [name, description] = line;
                     categories.push({ name, description });
                 })
                 .on('end', () => {
-                    fs.promises.unlink(file.path).then(r => r);
+                    fs.promises.unlink(file.path).then((r) => r);
                     return resolve(categories);
                 })
                 .on('error', () => {

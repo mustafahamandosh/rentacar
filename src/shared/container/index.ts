@@ -1,10 +1,10 @@
 import { container } from 'tsyringe';
 
-import { UserRepository } from '../../modules/accounts/repository/implementations/UserRepository';
-import { IUserRepository } from '../../modules/accounts/repository/IUserRepository';
-import { ICategoryRepository } from '../../modules/cars/repositories/ICategoryRepository';
-import { PostgresCategoryRepository } from '../../modules/cars/repositories/implementations/PostgresCategoryRepository';
-import { PostgresSpecificationsRepository } from '../../modules/cars/repositories/implementations/PostgresSpecificationsRepository';
+import { ICategoryRepository } from 'repository-interface/ICategoryRepository';
+import { IUserRepository } from 'repository-interface/IUserRepository';
+import { PostgresCategoryRepository } from 'repository/PostgresCategoryRepository';
+import { PostgresSpecificationsRepository } from 'repository/PostgresSpecificationsRepository';
+import { UserRepository } from 'repository/UserRepository';
 
 container.registerSingleton<ICategoryRepository>(
     'PostgresCategoryRepository',

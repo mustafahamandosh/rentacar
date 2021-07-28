@@ -1,7 +1,10 @@
-import { Category } from 'models/Category';
 import { getRepository, Repository } from 'typeorm';
 
-import { ICategoryDTO, ICategoryRepository } from '../ICategoryRepository';
+import { Category } from 'models/Category';
+import {
+    ICategoryDTO,
+    ICategoryRepository,
+} from 'repository-interface/ICategoryRepository';
 
 export class PostgresCategoryRepository implements ICategoryRepository {
     private repository: Repository<Category>;

@@ -16,10 +16,31 @@
     "baseUrl": ".",
     "paths": {
       "models/*": [
-        "./src/modules/cars/model/*"
+        "./src/modules/cars/model/*",
+        "./src/modules/accounts/model/*"
       ],
       "controllers/*": [
-        "./src/modules/cars/useCases/*"
+        "./src/modules/cars/useCases/*",
+        "./src/modules/accounts/useCases/*"
+      ],
+      "usecases/*": [
+        "./src/modules/cars/useCases/*",
+        "./src/modules/accounts/useCases/*"
+      ],
+      "repository/*": [
+        "./src/modules/cars/repository/implementations/*",
+        "./src/modules/accounts/repository/implementations/*"
+      ],
+      "repository-interface/*": [
+        "./src/modules/cars/repository/*",
+        "./src/modules/accounts/repository/*"
+      ],
+      "dto/*": [
+        "./src/modules/cars/dtos/*",
+        "./src/modules/accounts/dtos/*"
+      ],
+      "routes/*": [
+        "./src/routes/*",
       ]
     }
   }
