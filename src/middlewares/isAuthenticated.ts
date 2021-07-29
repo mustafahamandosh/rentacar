@@ -26,6 +26,9 @@ export async function isAuthenticated(
         const userRepository = new UserRepository();
         const user = await userRepository.findById(user_id as string);
         if (user) {
+            req.user = {
+                id: user_id as string,
+            };
             next();
         }
         return;
