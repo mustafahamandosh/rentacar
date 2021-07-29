@@ -3,6 +3,8 @@ import fs from 'fs';
 import csvParse from 'csv-parse';
 import { inject, injectable } from 'tsyringe';
 
+import { AppError } from '../../../../../errors/AppError';
+
 import { ICategoryRepository } from 'repository-interface/ICategoryRepository';
 
 interface ICategoryFile {
@@ -33,7 +35,7 @@ export class ImportCategoryUseCase {
                     return resolve(categories);
                 })
                 .on('error', () => {
-                    return reject(new Error('Error while loading file'));
+                    return reject(new AppError('Error while loading file'));
                 });
         });
     }
@@ -45,7 +47,7 @@ export class ImportCategoryUseCase {
                 name,
             );
             if (isCategoryExist) {
-                throw new Error('Category already exists!');
+                throw new AppError('Category already exists!');
             }
             await this.categoryRepository.create({ name, description });
         });
