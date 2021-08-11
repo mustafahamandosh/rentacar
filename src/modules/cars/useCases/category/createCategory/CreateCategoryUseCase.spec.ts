@@ -1,5 +1,3 @@
-import { AppError } from '../../../../../errors/AppError';
-
 import { CategoryRepositoryInMemory } from 'repository-interface/in-memory/CategoryRepositoryInMemory';
 import { CreateCategoryUseCase } from 'usecases/category/createCategory/CreateCategoryUseCase';
 
@@ -32,6 +30,6 @@ describe('Create category', () => {
             };
             await createCategoryUseCase.execute(category);
             await createCategoryUseCase.execute(category);
-        }).rejects.toBeInstanceOf(AppError);
+        }).rejects.toBeInstanceOf(Error);
     });
 });
