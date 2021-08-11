@@ -16,8 +16,8 @@
     "baseUrl": "./src",
     "paths": {
       "models/*": [
-        "modules/cars/model/*",
-        "modules/accounts/model/*"
+        "modules/cars/infra/typeorm/model/*",
+        "modules/accounts/infra/typeorm/model/*"
       ],
       "controllers/*": [
         "modules/cars/useCases/*",
@@ -28,8 +28,8 @@
         "modules/accounts/useCases/*"
       ],
       "repository/*": [
-        "modules/cars/repository/implementations/*",
-        "modules/accounts/repository/implementations/*"
+        "modules/cars/infra/typeorm/repositories/*",
+        "modules/accounts/infra/typeorm/repositories/*"
       ],
       "repository-interface/*": [
         "modules/cars/repository/*",
@@ -39,11 +39,14 @@
         "modules/cars/dtos/*",
         "modules/accounts/dtos/*"
       ],
-      "routes/*": [
-        "routes/*"
+      "middlewares/*": [
+        "shared/infra/http/middlewares/*"
+      ],
+      "config/*": [
+        "config/*"
       ],
       "errors/*": [
-        "errors/*"
+        "shared/errors/*"
       ],
       "utils/*": [
         "utils/*"

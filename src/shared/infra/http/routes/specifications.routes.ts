@@ -1,8 +1,7 @@
 import { Router } from 'express';
+import { isAuthenticated } from 'middlewares/isAuthenticated';
 import { CreateSpecificationController } from 'usecases/specifications/createSpecification/CreateSpecificationController';
 import { ListSpecificationsController } from 'usecases/specifications/listSpecifications/ListSpecificationsController';
-
-import { isAuthenticated } from '../middlewares/isAuthenticated';
 
 export const specificationsRoutes = Router();
 
