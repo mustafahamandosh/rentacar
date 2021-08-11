@@ -2,8 +2,7 @@ import { compareSync } from 'bcryptjs';
 import { sign } from 'jsonwebtoken';
 import { inject, injectable } from 'tsyringe';
 
-import { AppError } from '../../../../../errors/AppError';
-
+import { AppError } from 'errors/AppError';
 import { IUserRepository } from 'repository-interface/IUserRepository';
 
 interface IRequest {

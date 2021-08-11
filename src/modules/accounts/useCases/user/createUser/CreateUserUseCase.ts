@@ -1,9 +1,8 @@
 import { hashSync } from 'bcryptjs';
 import { inject, injectable } from 'tsyringe';
 
-import { AppError } from '../../../../../errors/AppError';
-
 import { ICreateUserDTO } from 'dto/ICreateUserDTO';
+import { AppError } from 'errors/AppError';
 import { IUserRepository } from 'repository-interface/IUserRepository';
 
 @injectable()

@@ -1,8 +1,7 @@
 import { NextFunction, Request, Response } from 'express';
 import { verify } from 'jsonwebtoken';
 
-import { AppError } from '../errors/AppError';
-
+import { AppError } from 'errors/AppError';
 import { UserRepository } from 'repository/UserRepository';
 
 export async function isAuthenticated(

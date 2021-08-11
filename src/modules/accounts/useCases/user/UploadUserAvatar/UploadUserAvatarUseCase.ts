@@ -1,9 +1,8 @@
 import { inject, injectable } from 'tsyringe';
 
-import { deleteFile } from '../../../../../utils/file';
-
 import { User } from 'models/User';
 import { IUserRepository } from 'repository-interface/IUserRepository';
+import { deleteFile } from 'utils/file';
 
 interface IRequest {
     user_id: string;
