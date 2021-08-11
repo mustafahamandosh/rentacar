@@ -1,3 +1,14 @@
+PATCH {{baseURL}}/users
+Content-Type: multipart/form-data; boundary=WebAppBoundary
+Authorization: Bearer {{token}}
+
+--WebAppBoundary
+Content-Disposition: form-data; name="avat"; filename="avatar.jpeg"
+
+< /Users/dr.aseel/Downloads/mustafa.jpeg
+--WebAppBoundary--
+
+###
 POST {{baseURL}}/session
 Content-Type: application/json
 

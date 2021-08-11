@@ -6,10 +6,11 @@ import { UploadUserAvatarUseCase } from 'usecases/user/UploadUserAvatar/UploadUs
 export class UploadUserAvatarController {
     async handle(req: Request, res: Response): Promise<Response> {
         const { id: user_id } = req.user;
+        const avatar = req.file?.filename as string;
         const uploadUserAvatarUseCase = container.resolve(
             UploadUserAvatarUseCase,
         );
-        await uploadUserAvatarUseCase.execute({ user_id, avatar: '' });
+        await uploadUserAvatarUseCase.execute({ user_id, avatar });
         return res.status(204).send();
     }
 }
