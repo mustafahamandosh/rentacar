@@ -3,7 +3,7 @@
     "target": "es5",
     "module": "commonjs",
     "outDir": "./dist",
-    "rootDir": "./src",
+    "rootDir": "./",
     "strict": true,
     "strictPropertyInitialization": false,
     "esModuleInterop": true,
@@ -13,40 +13,40 @@
     "forceConsistentCasingInFileNames": true,
     "moduleResolution": "node",
     "resolveJsonModule": true,
-    "baseUrl": ".",
+    "baseUrl": "./src",
     "paths": {
       "models/*": [
-        "./src/modules/cars/model/*",
-        "./src/modules/accounts/model/*"
+        "modules/cars/model/*",
+        "modules/accounts/model/*"
       ],
       "controllers/*": [
-        "./src/modules/cars/useCases/*",
-        "./src/modules/accounts/useCases/*"
+        "modules/cars/useCases/*",
+        "modules/accounts/useCases/*"
       ],
       "usecases/*": [
-        "./src/modules/cars/useCases/*",
-        "./src/modules/accounts/useCases/*"
+        "modules/cars/useCases/*",
+        "modules/accounts/useCases/*"
       ],
       "repository/*": [
-        "./src/modules/cars/repository/implementations/*",
-        "./src/modules/accounts/repository/implementations/*"
+        "modules/cars/repository/implementations/*",
+        "modules/accounts/repository/implementations/*"
       ],
       "repository-interface/*": [
-        "./src/modules/cars/repository/*",
-        "./src/modules/accounts/repository/*"
+        "modules/cars/repository/*",
+        "modules/accounts/repository/*"
       ],
       "dto/*": [
-        "./src/modules/cars/dtos/*",
-        "./src/modules/accounts/dtos/*"
+        "modules/cars/dtos/*",
+        "modules/accounts/dtos/*"
       ],
       "routes/*": [
-        "./src/routes/*",
+        "routes/*"
       ],
       "errors/*": [
-        "./src/errors/*"
+        "errors/*"
       ],
       "utils/*": [
-        "./src/utils/*"
+        "utils/*"
       ]
     }
   }

@@ -1,6 +1,6 @@
-import { Router } from 'express';
 import multer from 'multer';
 
+import { Router } from 'express';
 import { CreateCategoryController } from 'usecases/category/createCategory/CreateCategoryController';
 import { ImportCategoryController } from 'usecases/category/ImportCategory/ImportCategoryController';
 import { ListCategoryController } from 'usecases/category/listCategories/ListCategoryController';

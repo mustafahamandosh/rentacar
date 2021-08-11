@@ -1,5 +1,4 @@
 import { Router } from 'express';
-
 import { authenticationRoutes } from 'routes/authentication.routes';
 import { categoriesRoutes } from 'routes/categories.routes';
 import { specificationsRoutes } from 'routes/specifications.routes';

@@ -1,6 +1,6 @@
-import { Request, Response } from 'express';
 import { container } from 'tsyringe';
 
+import { Request, Response } from 'express';
 import { UploadUserAvatarUseCase } from 'usecases/user/UploadUserAvatar/UploadUserAvatarUseCase';
 
 export class UploadUserAvatarController {
