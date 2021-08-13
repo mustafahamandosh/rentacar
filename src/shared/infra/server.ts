@@ -1,13 +1,12 @@
 import 'reflect-metadata';
 import './typeorm';
 import '../container';
+import 'express-async-errors';
 
+import express, { Request, Response } from 'express';
 import swaggerUi from 'swagger-ui-express';
 
 import { AppError } from 'errors/AppError';
-import express, { Request, Response } from 'express';
-
-import 'express-async-errors';
 
 import { router } from './http/routes';
 

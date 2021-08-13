@@ -1,0 +1,14 @@
+POST {{baseURL}}/cars
+Content-Type: application/json
+
+{
+    "name": "Tesla model Y",
+    "description": "The best car in this world",
+    "daily_rate": 148.00,
+    "license_plate": "DEF-11",
+    "fine_amount": 100,
+    "brand": "Tesla",
+    "category_id": "01c04e95-e09e-4bbc-a1e1-a0a39e971c82"
+}
+
+###

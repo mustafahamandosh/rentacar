@@ -16,8 +16,8 @@ POST {{baseURL}}/categories
 Content-Type: application/json
 
 {
-    "name": "BMW",
-    "description": "The fastest car"
+    "name": "EV",
+    "description": "No need for gasoline"
 }
 
 ### add a new category
