@@ -1,4 +1,4 @@
-export interface ICreateUserDTO {
+export interface ICreateCarDto {
     name: string;
     description: string;
     daily_rate: number;
