@@ -1,6 +1,6 @@
 import { getRepository, Repository } from 'typeorm';
 
-import { ICreateUserDTO } from 'dto/ICreateUserDTO';
+import { ICreateCarDto } from 'dto/ICreateCarDto';
 import { Car } from 'models/Car';
 import { ICarRepository } from 'repository-interface/ICarRepository';
 
@@ -19,7 +19,7 @@ export class PostgresCarRepository implements ICarRepository {
         fine_amount,
         license_plate,
         category_id,
-    }: ICreateUserDTO): Promise<Car> {
+    }: ICreateCarDto): Promise<Car> {
         const car = this.repository.create({
             name,
             description,

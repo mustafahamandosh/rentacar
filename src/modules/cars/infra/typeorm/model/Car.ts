@@ -2,13 +2,13 @@ import {
     Column,
     CreateDateColumn,
     Entity,
+    JoinColumn,
     ManyToOne,
     PrimaryColumn,
-    JoinColumn,
 } from 'typeorm';
 import { v4 as uuid } from 'uuid';
 
-import { Category } from 'models/Category';
+import { Category } from './Category';
 
 @Entity('cars')
 export class Car {
