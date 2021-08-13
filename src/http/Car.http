@@ -1,14 +1,15 @@
 POST {{baseURL}}/cars
 Content-Type: application/json
+Authorization: Bearer {{token}}
 
 {
     "name": "Tesla model Y",
     "description": "The best car in this world",
     "daily_rate": 148.00,
-    "license_plate": "DEF-11",
+    "license_plate": "DEF-112",
     "fine_amount": 100,
     "brand": "Tesla",
-    "category_id": "01c04e95-e09e-4bbc-a1e1-a0a39e971c82"
+    "category_id": "d33bb043-74a8-4724-8996-2171f76d48ab"
 }
 
 ###

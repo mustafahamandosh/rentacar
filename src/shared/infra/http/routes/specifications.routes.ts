@@ -1,4 +1,6 @@
 import { Router } from 'express';
+
+import { isAdmin } from 'middlewares/isAdmin';
 import { isAuthenticated } from 'middlewares/isAuthenticated';
 import { CreateSpecificationController } from 'usecases/specifications/createSpecification/CreateSpecificationController';
 import { ListSpecificationsController } from 'usecases/specifications/listSpecifications/ListSpecificationsController';
@@ -11,6 +13,7 @@ const listSpecificationsController = new ListSpecificationsController();
 specificationsRoutes.post(
     '/',
     isAuthenticated,
+    isAdmin,
     createSpecificationController.handle,
 );
 
