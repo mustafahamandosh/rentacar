@@ -1,3 +1,5 @@
+import { inject, injectable } from 'tsyringe';
+
 import { Car } from 'models/Car';
 import { ICarRepository } from 'repository-interface/ICarRepository';
 
@@ -11,8 +13,11 @@ interface IRequest {
     category_id: string;
 }
 
+@injectable()
 export class CreateCarUseCase {
-    constructor(private carRepository: ICarRepository) {}
+    constructor(
+        @inject('PostgresCarRepository') private carRepository: ICarRepository,
+    ) {}
 
     async execute({
         name,
