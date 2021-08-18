@@ -2,7 +2,7 @@ import { Router } from 'express';
 
 import { isAdmin } from 'middlewares/isAdmin';
 import { isAuthenticated } from 'middlewares/isAuthenticated';
-import { CreateCarController } from 'usecases/car/CreateCarController';
+import { CreateCarController } from 'usecases/car/createCar/CreateCarController';
 
 export const carsRoutes = Router();
 

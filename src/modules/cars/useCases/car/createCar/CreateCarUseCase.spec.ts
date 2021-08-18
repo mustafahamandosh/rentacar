@@ -1,5 +1,5 @@
 import { CarRepositoryInMemory } from 'repository-interface/in-memory/CarRepositoryInMemory';
-import { CreateCarUseCase } from 'usecases/car/CreateCarUseCase';
+import { CreateCarUseCase } from 'usecases/car/createCar/CreateCarUseCase';
 
 let createCarUseCase: CreateCarUseCase;
 let carRepositoryInMemory: CarRepositoryInMemory;
