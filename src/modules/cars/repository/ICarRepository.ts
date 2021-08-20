@@ -13,4 +13,10 @@ export interface ICarRepository {
     }: ICreateCarDto): Promise<Car>;
 
     findByLicensePlat(license_plate: string): Promise<Car | undefined>;
+
+    listAvailableCars(
+        brand?: string,
+        category_id?: string,
+        name?: string,
+    ): Promise<Car[] | undefined>;
 }
