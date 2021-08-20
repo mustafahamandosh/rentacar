@@ -1,14 +1,18 @@
+GET {{baseURL}}/cars/available?category_id=d33bb043-74a8-4724-8996-2171f76d48ab
+Accept: application/json
+
+###
 POST {{baseURL}}/cars
 Content-Type: application/json
 Authorization: Bearer {{token}}
 
 {
-    "name": "Tesla model Y",
+    "name": "volester",
     "description": "The best car in this world",
     "daily_rate": 148.00,
-    "license_plate": "DEF-112",
+    "license_plate": "DEF-156",
     "fine_amount": 100,
-    "brand": "Tesla",
+    "brand": "Hyundai",
     "category_id": "d33bb043-74a8-4724-8996-2171f76d48ab"
 }
 
