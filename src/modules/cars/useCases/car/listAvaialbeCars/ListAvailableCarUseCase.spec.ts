@@ -9,6 +9,7 @@ describe('List cars', () => {
         carRepository = new CarRepositoryInMemory();
         listCarUseCase = new ListAvailableCarUseCase(carRepository);
     });
+
     it('should be able to list all available cars', async () => {
         await carRepository.create({
             name: 'model Y',
@@ -17,6 +18,15 @@ describe('List cars', () => {
             daily_rate: 300,
             fine_amount: 60,
             license_plate: 'ABC-12',
+            category_id: 'category_id',
+        });
+        await carRepository.create({
+            name: 'model S',
+            description: 'Great car',
+            brand: 'Tesla',
+            daily_rate: 300,
+            fine_amount: 60,
+            license_plate: 'ABC-123',
             category_id: 'category_id',
         });
         const cars = await listCarUseCase.execute({});
@@ -33,13 +43,21 @@ describe('List cars', () => {
             license_plate: 'ABC-12',
             category_id: 'category_id',
         });
-        const cars = await listCarUseCase.execute({ name: 'test' });
-        console.log(cars);
+        await carRepository.create({
+            name: 'HB20',
+            description: 'Economic car',
+            brand: 'Hyundai',
+            daily_rate: 300,
+            fine_amount: 60,
+            license_plate: 'ABC-123',
+            category_id: 'category_id',
+        });
+        const cars = await listCarUseCase.execute({ name: 'model S' });
         expect(cars?.length).toBeGreaterThan(0);
     });
 
     it('should be able to list all available cars by brand', async () => {
-        const car = await carRepository.create({
+        await carRepository.create({
             name: 'model S',
             description: 'Great car',
             brand: 'Tesla',
@@ -48,7 +66,16 @@ describe('List cars', () => {
             license_plate: 'ABC-12',
             category_id: 'category_id',
         });
-        const cars = await listCarUseCase.execute({ brand: car.brand });
+        await carRepository.create({
+            name: 'HB20',
+            description: 'Economic car',
+            brand: 'Hyundai',
+            daily_rate: 300,
+            fine_amount: 60,
+            license_plate: 'ABC-123',
+            category_id: 'category_id',
+        });
+        const cars = await listCarUseCase.execute({ brand: 'Tesla' });
         expect(cars?.length).toBeGreaterThan(0);
     });
 
