@@ -1,14 +1,15 @@
+### list all specifications
 GET {{baseURL}}/specifications
 Accept: application/json
 
-###
+### create a new specification
 POST {{baseURL}}/specifications
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2Mjc1MTQ3ODgsImV4cCI6MTYyNzYwMTE4OCwic3ViIjoiMzE4OGEwMGUtMjUwNy00MTI0LTg0YmMtZjc3OTZiNzJmNjM4In0.kstPVSp_LO9_88fJ3dd1SC2G9lwP8ZjB2ZysCyVMXa4
+Authorization: Bearer {{token}}
 
 {
-    "name": "Test",
-    "description": "test test test"
+    "name": "solar cars",
+    "description": "tesla cars"
 }
 
 ###

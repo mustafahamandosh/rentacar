@@ -1,3 +1,4 @@
+### import category from csv file
 POST {{baseURL}}/categories/import
 Content-Type: multipart/form-data; boundary=WebAppBoundary
 
@@ -7,13 +8,14 @@ Content-Disposition: form-data; name="file"; filename="file"
 < /Users/dr.aseel/Downloads/1615818549022-attachment.csv
 --WebAppBoundary--
 
-###
+### list all categories
 GET {{baseURL}}/categories
 Accept: application/json
 
-###
+### create a new category
 POST {{baseURL}}/categories
 Content-Type: application/json
+Authorization: Bearer {{token}}
 
 {
     "name": "EV",

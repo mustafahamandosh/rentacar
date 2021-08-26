@@ -6,9 +6,11 @@ export interface ISpecificationsDTO {
 }
 
 export interface ISpecificationsRepository {
-    create({ name, description }: ISpecificationsDTO): Promise<void>;
+    create({ name, description }: ISpecificationsDTO): Promise<Specifications>;
 
     list(): Promise<Specifications[]>;
 
     findByName(name: string): Promise<Specifications | undefined>;
+
+    findByIds(ids: string[]): Promise<Specifications[]>;
 }

@@ -15,9 +15,13 @@ export class PostgresSpecificationsRepository
         this.repository = getRepository(Specifications);
     }
 
-    async create({ name, description }: ISpecificationsDTO): Promise<void> {
+    async create({
+        name,
+        description,
+    }: ISpecificationsDTO): Promise<Specifications> {
         const specification = this.repository.create({ name, description });
         await this.repository.save(specification);
+        return specification;
     }
 
     async findByName(name: string): Promise<Specifications | undefined> {
@@ -26,5 +30,9 @@ export class PostgresSpecificationsRepository
 
     async list(): Promise<Specifications[]> {
         return await this.repository.find();
+    }
+
+    async findByIds(ids: string[]): Promise<Specifications[]> {
+        return await this.repository.findByIds(ids);
     }
 }

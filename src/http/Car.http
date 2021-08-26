@@ -1,19 +1,42 @@
-GET {{baseURL}}/cars/available?category_id=d33bb043-74a8-4724-8996-2171f76d48ab
+POST {{baseURL}}/cars/specifications/c8d48f84-9023-4593-8aad-6f6030e0a68b
+Content-Type: application/json
+
+{
+    "specifications_id": [
+        "241b100a-cd05-447a-a370-d3702d507289",
+        "cf8e364b-5850-4358-b7a1-08525c7a5248"
+    ]
+}
+
+### list by available cars by category id
+GET {{baseURL}}/cars/available?category_id=212d2859-77f0-4d49-8c0e-0f250d6dd12c
 Accept: application/json
 
-###
+### list available cars by brand name
+GET {{baseURL}}/cars/available?brand=Hyundai
+Accept: application/json
+
+### list available cars by car name
+GET {{baseURL}}/cars/available?name=volester
+Accept: application/json
+
+### list all available cars
+GET {{baseURL}}/cars/available
+Accept: application/json
+
+### create a new car
 POST {{baseURL}}/cars
 Content-Type: application/json
 Authorization: Bearer {{token}}
 
 {
-    "name": "volester",
+    "name": "model s",
     "description": "The best car in this world",
     "daily_rate": 148.00,
-    "license_plate": "DEF-156",
+    "license_plate": "DEF-146",
     "fine_amount": 100,
-    "brand": "Hyundai",
-    "category_id": "d33bb043-74a8-4724-8996-2171f76d48ab"
+    "brand": "Tesla",
+    "category_id": "64bc31f1-d2df-44d7-b466-39ac2cf88cb6"
 }
 
 ###

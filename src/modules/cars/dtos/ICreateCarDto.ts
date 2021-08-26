@@ -1,3 +1,5 @@
+import { Specifications } from 'models/Specifications';
+
 export interface ICreateCarDto {
     name: string;
     description: string;
@@ -6,4 +8,6 @@ export interface ICreateCarDto {
     fine_amount: number;
     brand: string;
     category_id: string;
+    specifications?: Specifications[];
+    id?: string;
 }

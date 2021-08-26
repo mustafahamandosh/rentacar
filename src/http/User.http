@@ -1,14 +1,15 @@
+### upload profile picture
 PATCH {{baseURL}}/users
 Content-Type: multipart/form-data; boundary=WebAppBoundary
 Authorization: Bearer {{token}}
 
 --WebAppBoundary
-Content-Disposition: form-data; name="avat"; filename="avatar.jpeg"
+Content-Disposition: form-data; name="avatar"; filename="avatar.jpeg"
 
 < /Users/dr.aseel/Downloads/mustafa.jpeg
 --WebAppBoundary--
 
-###
+### login
 POST {{baseURL}}/session
 Content-Type: application/json
 
@@ -17,7 +18,7 @@ Content-Type: application/json
     "password": "admin"
 }
 
-###
+### create a new user
 POST {{baseURL}}/users
 Content-Type: application/json
 

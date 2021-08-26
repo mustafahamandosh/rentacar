@@ -19,6 +19,8 @@ export class PostgresCarRepository implements ICarRepository {
         fine_amount,
         license_plate,
         category_id,
+        id,
+        specifications,
     }: ICreateCarDto): Promise<Car> {
         const car = this.repository.create({
             name,
@@ -28,9 +30,10 @@ export class PostgresCarRepository implements ICarRepository {
             fine_amount,
             license_plate,
             category_id,
+            id,
+            specifications,
         });
-        await this.repository.save(car);
-        return car;
+        return await this.repository.save(car);
     }
 
     async findByLicensePlat(license_plate: string): Promise<Car | undefined> {
@@ -55,5 +58,9 @@ export class PostgresCarRepository implements ICarRepository {
             query.andWhere('c.category_id = :category_id', { category_id });
         }
         return query.getMany();
+    }
+
+    async findById(card_id: string): Promise<Car | undefined> {
+        return await this.repository.findOne({ id: card_id });
     }
 }

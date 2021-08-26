@@ -9,7 +9,7 @@ import { userRoutes } from './user.routes';
 export const router = Router();
 
 router.use('/categories', categoriesRoutes);
+router.use('/cars', carsRoutes);
 router.use('/specifications', specificationsRoutes);
 router.use('/users', userRoutes);
-router.use('/cars', carsRoutes);
 router.use(authenticationRoutes);
